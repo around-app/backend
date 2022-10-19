@@ -1,7 +1,9 @@
 /bin/
 /node_modules/
 **/node_modules/
-**/*.js
-**/*.js.map
+lib/**/*.js
+lib/**/*.js.map
+services/**/*.js
+services/**/*.js.map
 **/*.d.ts
 **/dist
