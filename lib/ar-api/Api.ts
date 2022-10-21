@@ -6,7 +6,6 @@ import express, {
   NextFunction,
   RequestHandler,
 } from 'express';
-// import { IApi, RequestMethods } from '../interfaces/IApi';;
 
 export enum RequestMethods {
   GET = 'GET',

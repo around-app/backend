@@ -1,1 +1,1 @@
-export * from './classes/Api';
+export * from './Api';

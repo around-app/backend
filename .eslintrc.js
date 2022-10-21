@@ -12,6 +12,7 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
+    "@typescript-eslint/strict-boolean-expressions": 0
   },
   plugins: ['prettier'],
   extends: ['standard-with-typescript', 'plugin:prettier/recommended'],
