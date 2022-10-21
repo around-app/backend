@@ -31,7 +31,7 @@ gulp.task('build-libs', function (cb) {
           // cleanup
           function (cleanDone) {
             const toClean = [
-              'node_modules',
+              'node_modules/',
               '*.js',
               '**/*.js.map',
               '**/*.d.ts',
