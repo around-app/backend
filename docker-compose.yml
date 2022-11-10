@@ -1,0 +1,34 @@
+# Specify the version number
+version: '3'
+services:
+  # Order service
+  api-gateway:
+    # The order service corresponds to the Dockerfile path
+    build:
+      context: ./services/api-gateway
+    env_file:
+      - .development.env
+    ports:
+      - 3001:3001
+    restart: always
+    container_name: api-gateway
+    hostname: api-gateway
+    networks:
+      - app
+
+  # User service
+  users:
+    # User service corresponds to Dockerfile path
+    build:
+      context: ./services/users
+    env_file:
+      - .development.env
+    restart: always
+    container_name: users
+    hostname: users
+    networks:
+      - app
+
+# set network as app
+networks:
+  app:
