@@ -3,7 +3,7 @@ import { InjectConnection } from '@nestjs/mongoose';
 import { Connection } from 'mongoose';
 import { MUUID as MongoUUID, from as toMUUID } from 'uuid-mongodb';
 import { v4 as uuidv4 } from 'uuid';
-import { User } from '@around/types';
+import { User } from 'around-types';
 
 export function fromMongoUUID(id: string): string {
   return toMUUID(id).toString();

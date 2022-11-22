@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { User } from '@around/types';
+import { User } from 'around-types';
 import { UsersService } from './users.service';
 
 @Controller()

@@ -4,7 +4,7 @@ import {
   NotImplementedException,
 } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
-import { User } from '@around/types';
+import { User } from 'around-types';
 import { map, catchError, Observable } from 'rxjs';
 
 @Injectable()
