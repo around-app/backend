@@ -23,10 +23,15 @@
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
+    "@nestjs/mongoose": "^9.2.1",
     "@nestjs/platform-express": "^9.0.0",
+    "mongoose": "^6.7.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "uuid": "^9.0.0",
+    "uuid-mongodb": "^2.5.1",
+    "@around/types": "file:../../../libs/types"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
