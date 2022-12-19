@@ -1,11 +1,23 @@
-# Specify the version number
 version: '3'
 services:
-  # Order service
+  around-mongodb:
+    image: mongo:latest
+    env_file:
+      - .development.env
+    container_name: around-mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - around-mongodb-data:/data/db
+    environment:
+    - MONGO_INITDB_ROOT_USERNAME=root
+    - MONGO_INITDB_ROOT_PASSWORD=rootpassword
+    networks:
+      - app
   api-gateway:
-    # The order service corresponds to the Dockerfile path
     build:
-      context: ./services/api-gateway
+      context: ./
+      dockerfile: ./services/api-gateway/Dockerfile
     env_file:
       - .development.env
     ports:
@@ -15,12 +27,10 @@ services:
     hostname: api-gateway
     networks:
       - app
-
-  # User service
   users:
-    # User service corresponds to Dockerfile path
     build:
-      context: ./services/users
+      context: ./
+      dockerfile: ./services/users/Dockerfile
     env_file:
       - .development.env
     restart: always
@@ -28,7 +38,7 @@ services:
     hostname: users
     networks:
       - app
-
-# set network as app
+volumes:
+  around-mongodb-data:
 networks:
   app:

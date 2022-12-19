@@ -1,7 +1,7 @@
 import {
   Injectable,
-  ForbiddenException,
   NotImplementedException,
+  InternalServerErrorException,
 } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { User } from 'around-types';
@@ -23,7 +23,7 @@ export class UsersService {
       .pipe(
         catchError((e) => {
           console.log(e);
-          throw new ForbiddenException('Users service not available');
+          throw new InternalServerErrorException(e);
         }),
       );
     return res;
