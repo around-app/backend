@@ -1,11 +1,11 @@
 FROM node:14-alpine
 
-WORKDIR /src
+COPY ./libs ./build/libs
 
-COPY . .
+COPY ./services/users ./build/services/users
 
-RUN npm install
+WORKDIR /build/services/users
+
+RUN npm install --no-package-lock
 
 CMD ["npm", "run", "start"]
-
-EXPOSE 3002

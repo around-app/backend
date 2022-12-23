@@ -1,1 +1,6 @@
 .DS_Store
+node_modules
+dist
+libs/**/*.js
+libs/**/*.js.map
+libs/**/*.d.ts
